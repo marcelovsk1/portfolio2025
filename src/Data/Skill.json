@@ -1,0 +1,38 @@
+[
+    {
+      "title": "SwiftUi",
+      "imageSrc": "Skills/swift.png"
+    },
+    {
+      "title": "React.Js",
+      "imageSrc": "Skills/react.png"
+    },
+    {
+      "title": "Shopify Liquid",
+      "imageSrc": "Skills/liquid.png"
+    },
+    {
+      "title": "JavaScript",
+      "imageSrc": "Skills/js.png"
+    },
+    {
+      "title": "Typescript",
+      "imageSrc": "Skills/typescript_logo.svg.png"
+    },
+    {
+      "title": "Python",
+      "imageSrc": "Skills/python.png"
+    },
+    {
+      "title": "C#",
+      "imageSrc": "Skills/csharp.png"
+    },
+    {
+      "title": "Rails",
+      "imageSrc": "Skills/rails.svg"
+    },
+    {
+      "title": "Git",
+      "imageSrc": "Skills/git_icon.png"
+    }
+  ]

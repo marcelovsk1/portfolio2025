@@ -1,0 +1,24 @@
+[
+    {
+      "role": "Software Developer",
+      "organisation": "Evry Jewels",
+      "location": "Montréal, QC, Canada",
+      "startDate": "Jul, 2024",
+      "endDate": "Present",
+      "experiences": [
+        "Developing internal solutions using Shopify and Shopify Polaris, focusing on building customized and optimized apps tailored to the company’s needs. I also use Next.js and JavaScript to create internal software that enhances operational efficiency and improves user experience. Always committed to best development practices and technological innovation."
+      ],
+      "imageSrc": "Skills/evryj.png"
+    },
+    {
+      "role": "Software Developer Intern",
+      "organisation": "Trendit - Top Events Live Ranking",
+      "location": "Montréal, QC, Canada",
+      "startDate": "Dec, 2023",
+      "endDate": "Jul, 2024",
+      "experiences": [
+        " I developed and improved the app's functionality and user experience by implementing updates. I also created scraper robots to collect event data from various sources and update the app's database. This included writing efficient code to handle large volumes of data with accuracy and reliability."
+      ],
+      "imageSrc": "Skills/trendit_img.png"
+    }
+  ]

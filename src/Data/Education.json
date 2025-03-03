@@ -1,0 +1,37 @@
+[
+
+    {
+        "role": "Software Development Bootcamp",
+        "organisation": "Le Wagon Montreal",
+        "startDate": "2022",
+        "endDate": "2023",
+        "location": "Montreal, QC, Canada",
+        "experiences": [
+          "An intensive program focused on full-stack web development, equipping me with hands-on experience in building scalable software solutions, mastering modern programming languages, and collaborating effectively in tech-driven environments."
+        ],
+        "imageSrc": "Skills/le_wagon.png"
+      }
+      ,
+    {
+        "role": "Masters in Growth and Digital Strategy",
+        "organisation": "Pontifícia Universidade Católica do Rio Grande do Sul",
+        "startDate": "Dec, 2020",
+        "endDate": "May, 2022",
+        "location": "Porto Alegre, RS, Brazil",
+        "experiences": [
+          "Focused on strategies for scaling businesses and driving user engagement, this MBA enhances my ability to build data-driven software solutions, optimize digital products, and contribute to growth-focused development in tech projects."
+        ],
+        "imageSrc": "Skills/pucrs.png"
+      },
+    {
+      "role": "Bachelor of Business Administration - BBA",
+      "organisation": "Pontifícia Universidade Católica do Paraná",
+      "startDate": "Fev, 2016",
+      "endDate": "Fev, 2020",
+      "location": "Maringá, PR, Brazil",
+      "experiences": [
+        "Provided a strong foundation in business strategy and operations, enhancing my ability to develop software solutions that align with organizational goals and optimize processes."
+      ],
+      "imageSrc": "Skills/Brasão_PUCPR.png"
+    }
+  ]
