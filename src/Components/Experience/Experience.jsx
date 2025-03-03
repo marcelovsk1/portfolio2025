@@ -155,7 +155,6 @@ const Experience = () => {
                 isWorkExperience ? styles.activeButton : ""
               }`}
               onClick={handleWorkExperienceClick}
-              aria-selected={isWorkExperience}
             >
               Work Experience
             </button>
@@ -164,7 +163,6 @@ const Experience = () => {
                 !isWorkExperience ? styles.activeButton : ""
               }`}
               onClick={handleEducationClick}
-              aria-selected={!isWorkExperience}
             >
               Education
             </button>
