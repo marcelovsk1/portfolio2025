@@ -32,23 +32,65 @@ const Projects = () => {
   const projectsRef = useRef([]);
 
   useEffect(() => {
-    projectsRef.current.forEach((project, index) => {
-      gsap.fromTo(
-        project,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          delay: index * 0.1,
-          scrollTrigger: {
-            trigger: project,
-            start: 'top bottom-=100',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    });
+    gsap.fromTo(
+      projectsRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.projects-grid',
+          start: 'top bottom-=100',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const wrapper = document.querySelector('.projects-wrapper');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDown = true;
+      wrapper.classList.add('dragging');
+      startX = e.pageX - wrapper.offsetLeft;
+      scrollLeft = wrapper.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      wrapper.classList.remove('dragging');
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      wrapper.classList.remove('dragging');
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - wrapper.offsetLeft;
+      const walk = (x - startX) * 0.5; // Adjust scroll speed to be slower
+      wrapper.scrollLeft = scrollLeft - walk;
+    };
+
+    wrapper.addEventListener('mousedown', handleMouseDown);
+    wrapper.addEventListener('mouseleave', handleMouseLeave);
+    wrapper.addEventListener('mouseup', handleMouseUp);
+    wrapper.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      wrapper.removeEventListener('mousedown', handleMouseDown);
+      wrapper.removeEventListener('mouseleave', handleMouseLeave);
+      wrapper.removeEventListener('mouseup', handleMouseUp);
+      wrapper.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   const projectsRow1 = [
@@ -340,7 +382,6 @@ const Projects = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
