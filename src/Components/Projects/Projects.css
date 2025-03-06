@@ -44,6 +44,7 @@
     scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
     cursor: grab;
     padding-bottom: 1rem;
+    user-select: none;
   }
   
   .projects-wrapper::-webkit-scrollbar {
