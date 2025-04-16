@@ -21,6 +21,8 @@ import liquid from "../../Assets/Skills/liquid.png";
 import pucpr from "../../Assets/Skills/Brasão_PUCPR.png";
 import pucrs from "../../Assets/Skills/pucrs.png";
 import lewagon from "../../Assets/Skills/le_wagon.png";
+import canadaFlag from "../../Assets/Skills/canada-flag.png";
+import brazilFlag from "../../Assets/Skills/brazil-flag.png";
 
 
 const getImage = (imageSrc) => {
@@ -183,7 +185,39 @@ const Experience = () => {
                     <p>{item.organisation}</p>
                     <span>
                       {item.startDate} - {item.endDate}
-                      <p>{item.location}</p>
+                      <p className={styles.locationContainer}>
+                        {item.location}
+                        {item.location.toLowerCase().includes('canada') && (
+                          <img 
+                            src={canadaFlag} 
+                            alt="Canadian Flag" 
+                            style={{ 
+                              width: 'auto', 
+                              height: '15px', 
+                              boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+                              marginLeft: '6px',
+                              verticalAlign: 'middle',
+                              display: 'inline-block',
+                              borderRadius: '2px'
+                            }} 
+                          />
+                        )}
+                        {(item.location.toLowerCase().includes('brazil') || item.location.toLowerCase().includes('brasil')) && (
+                          <img 
+                            src={brazilFlag} 
+                            alt="Brazilian Flag" 
+                            style={{ 
+                              width: 'auto', 
+                              height: '19px', 
+                              boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+                              marginLeft: '6px',
+                              verticalAlign: 'middle',
+                              display: 'inline-block',
+                              borderRadius: '2px'
+                            }} 
+                          />
+                        )}
+                      </p>
                     </span>
                   </div>
                 </div>

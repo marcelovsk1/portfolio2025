@@ -25,7 +25,7 @@ import discount from "../../img/discount.png";
 import menu from "../../img/menu.png";
 import bubble from "../../img/bubble.png";
 import pace from "../../img/pace.png";
-
+import theme from "../../img/theme2.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
@@ -95,13 +95,13 @@ const Projects = () => {
 
   const projectsRow1 = [
     {
-      title: "Pace - Running App",
-      description: "My own running app, built with Swift. Coming soon!",
-      imgUrl: pace,
-      link: "",
-      liveDemo:"https://www.linkedin.com/posts/marceloamaralalves_ios-iosdevelopment-developer-activity-7213925743867662337-QBwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
-      language: "SwiftUi",
-      year: "2024",
+      title: "My Shopify Theme",
+      description: "A custom Shopify theme, built from scratch with Liquid and Shopify",
+      imgUrl: theme,
+      link: null,
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7316179512864481280/",
+      language: "Shopify",
+      year: "2025",
     },
     {
       title: "eCommerceMenu",
@@ -197,6 +197,15 @@ const Projects = () => {
   ];
 
   const projectsRow2 = [
+    {
+      title: "Pace - Running App",
+      description: "My own running app, built with Swift. Coming soon!",
+      imgUrl: pace,
+      link: "",
+      liveDemo:"https://www.linkedin.com/posts/marceloamaralalves_ios-iosdevelopment-developer-activity-7213925743867662337-QBwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
+      language: "SwiftUi",
+      year: "2024",
+    },
     {
       title: "eCommerce Filter Collection",
       description: "Filter bubbles for collections, built with Liquid and Shopify",
@@ -331,7 +340,7 @@ const Projects = () => {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="buttons">
-                    {project.title === "Pace - Running App" || project.title === "Product Card" || project.title === "eCommerceMenu" ? (
+                    {project.title === "My Shopify Theme" || project.title === "Product Card" || project.title === "eCommerceMenu" ? (
                       <>
                         <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
                       </>
@@ -365,7 +374,7 @@ const Projects = () => {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="buttons">
-                    {project.title === "Slider Section Collection" || project.title === "Discount Bar" || project.title === "eCommerce Filter Collection" ? (
+                    {project.title === "Pace - Running App" || project.title === "Slider Section Collection" || project.title === "Discount Bar" || project.title === "eCommerce Filter Collection" ? (
                       <>
                         <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
                       </>
