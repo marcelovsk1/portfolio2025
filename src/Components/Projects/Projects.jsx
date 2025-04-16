@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Projects.css';
+import ProjectModal from '../ProjectModal/ProjectModal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
 
 import drakenike from "../../img/shoesapp.png";
 import netflixapp from "../../img/netflixapp.png";
@@ -30,6 +32,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const projectsRef = useRef([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     gsap.fromTo(
@@ -54,30 +58,59 @@ const Projects = () => {
     let isDown = false;
     let startX;
     let scrollLeft;
+    let velocity = 0;
+    let rafId = null;
 
     const handleMouseDown = (e) => {
       isDown = true;
       wrapper.classList.add('dragging');
       startX = e.pageX - wrapper.offsetLeft;
       scrollLeft = wrapper.scrollLeft;
+      velocity = 0;
+      
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
     };
 
     const handleMouseLeave = () => {
       isDown = false;
       wrapper.classList.remove('dragging');
+      startMomentumScroll();
     };
 
     const handleMouseUp = () => {
       isDown = false;
       wrapper.classList.remove('dragging');
+      startMomentumScroll();
     };
 
     const handleMouseMove = (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - wrapper.offsetLeft;
-      const walk = (x - startX) * 0.5; // Adjust scroll speed to be slower
-      wrapper.scrollLeft = scrollLeft - walk;
+      const walk = (x - startX) * 2; // Increased multiplier for smoother movement
+      const newScrollLeft = scrollLeft - walk;
+      
+      // Calculate velocity
+      velocity = (wrapper.scrollLeft - newScrollLeft) * 0.5;
+      wrapper.scrollLeft = newScrollLeft;
+    };
+
+    const startMomentumScroll = () => {
+      if (Math.abs(velocity) < 0.1) return;
+
+      const momentumScroll = () => {
+        velocity *= 0.95; // Friction factor
+        wrapper.scrollLeft += velocity;
+
+        if (Math.abs(velocity) > 0.1) {
+          rafId = requestAnimationFrame(momentumScroll);
+        }
+      };
+
+      rafId = requestAnimationFrame(momentumScroll);
     };
 
     wrapper.addEventListener('mousedown', handleMouseDown);
@@ -90,6 +123,9 @@ const Projects = () => {
       wrapper.removeEventListener('mouseleave', handleMouseLeave);
       wrapper.removeEventListener('mouseup', handleMouseUp);
       wrapper.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -316,6 +352,47 @@ const Projects = () => {
     },
   ];
 
+  const handleProjectClick = (project) => {
+    if (isMobile) {
+      setSelectedProject(project);
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const handleButtonClick = (e) => {
+    e.stopPropagation(); // Impede que o clique do botão propague para o card
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const renderButtons = (project) => {
+    if (project.title === "My Shopify Theme" || 
+        project.title === "Product Card" || 
+        project.title === "eCommerceMenu" ||
+        project.title === "Pace - Running App" || 
+        project.title === "Slider Section Collection" || 
+        project.title === "Discount Bar" || 
+        project.title === "eCommerce Filter Collection") {
+      return (
+        <div className="buttons" onClick={handleButtonClick}>
+          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+        </div>
+      );
+    }
+
+    return (
+      <div className="buttons" onClick={handleButtonClick}>
+        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+        {project.liveDemo && (
+          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section className="projects-section" id="playground">
       <h2 className="projects-title">Playground</h2>
@@ -327,7 +404,12 @@ const Projects = () => {
           {/* Primeira linha de projetos */}
           <div className="projects-row">
             {projectsRow1.map((project, index) => (
-              <div key={index} className="project-card" ref={(el) => (projectsRef.current[index] = el)}>
+              <div 
+                key={index} 
+                className="project-card" 
+                ref={(el) => (projectsRef.current[index] = el)}
+                onClick={() => handleProjectClick(project)}
+              >
                 <div className="project-image">
                   <img 
                     src={project.imgUrl} 
@@ -339,20 +421,7 @@ const Projects = () => {
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <div className="buttons">
-                    {project.title === "My Shopify Theme" || project.title === "Product Card" || project.title === "eCommerceMenu" ? (
-                      <>
-                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                      </>
-                    ) : (
-                      <>
-                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                        {project.liveDemo && (
-                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                        )}
-                      </>
-                    )}
-                  </div>
+                  {!isMobile && renderButtons(project)}
                 </div>
               </div>
             ))}
@@ -361,7 +430,12 @@ const Projects = () => {
           {/* Segunda linha de projetos */}
           <div className="projects-row">
             {projectsRow2.map((project, index) => (
-              <div key={index + projectsRow1.length} className="project-card" ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}>
+              <div 
+                key={index + projectsRow1.length} 
+                className="project-card" 
+                ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}
+                onClick={() => handleProjectClick(project)}
+              >
                 <div className="project-image">
                   <img 
                     src={project.imgUrl} 
@@ -373,26 +447,21 @@ const Projects = () => {
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <div className="buttons">
-                    {project.title === "Pace - Running App" || project.title === "Slider Section Collection" || project.title === "Discount Bar" || project.title === "eCommerce Filter Collection" ? (
-                      <>
-                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                      </>
-                    ) : (
-                      <>
-                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                        {project.liveDemo && (
-                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                        )}
-                      </>
-                    )}
-                  </div>
+                  {!isMobile && renderButtons(project)}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Modal - só aparece no mobile */}
+      {isMobile && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={handleCloseModal}
+        />
+      )}
     </section>
   );
 };
