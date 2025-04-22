@@ -58,59 +58,30 @@ const Projects = () => {
     let isDown = false;
     let startX;
     let scrollLeft;
-    let velocity = 0;
-    let rafId = null;
 
     const handleMouseDown = (e) => {
       isDown = true;
       wrapper.classList.add('dragging');
       startX = e.pageX - wrapper.offsetLeft;
       scrollLeft = wrapper.scrollLeft;
-      velocity = 0;
-      
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
     };
 
     const handleMouseLeave = () => {
       isDown = false;
       wrapper.classList.remove('dragging');
-      startMomentumScroll();
     };
 
     const handleMouseUp = () => {
       isDown = false;
       wrapper.classList.remove('dragging');
-      startMomentumScroll();
     };
 
     const handleMouseMove = (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - wrapper.offsetLeft;
-      const walk = (x - startX) * 2; // Increased multiplier for smoother movement
-      const newScrollLeft = scrollLeft - walk;
-      
-      // Calculate velocity
-      velocity = (wrapper.scrollLeft - newScrollLeft) * 0.5;
-      wrapper.scrollLeft = newScrollLeft;
-    };
-
-    const startMomentumScroll = () => {
-      if (Math.abs(velocity) < 0.1) return;
-
-      const momentumScroll = () => {
-        velocity *= 0.95; // Friction factor
-        wrapper.scrollLeft += velocity;
-
-        if (Math.abs(velocity) > 0.1) {
-          rafId = requestAnimationFrame(momentumScroll);
-        }
-      };
-
-      rafId = requestAnimationFrame(momentumScroll);
+      const walk = (x - startX) * 0.5; // Adjust scroll speed to be slower
+      wrapper.scrollLeft = scrollLeft - walk;
     };
 
     wrapper.addEventListener('mousedown', handleMouseDown);
@@ -123,9 +94,6 @@ const Projects = () => {
       wrapper.removeEventListener('mouseleave', handleMouseLeave);
       wrapper.removeEventListener('mouseup', handleMouseUp);
       wrapper.removeEventListener('mousemove', handleMouseMove);
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-      }
     };
   }, []);
 
