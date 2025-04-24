@@ -93,9 +93,9 @@
 
 .modal-main-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .modal-main-image:hover {
@@ -110,12 +110,12 @@
 
 .modal-description h3 {
   margin: 0 0 12px 0;
-  color: #333;
+  color: black !important;
 }
 
 .modal-description p {
   margin: 0;
-  color: #666;
+  color: black !important;
   line-height: 1.6;
 }
 
@@ -166,6 +166,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.modal-year {
+  display: flex;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .modal-content {
     /* padding: 16px; */
@@ -176,7 +181,7 @@
       margin: 0;
       text-align: start;
       font-size: 24px;
-      color: #333;
+      color: black !important;
   }
 
   .modal-description p {
@@ -194,15 +199,20 @@
     flex-direction: column;
   }
 
+  .modal-year {
+    display: flex;
+  }
+
   .modal-category {
     display: inline-block;
     padding: 4px 12px;
-    background-color: #f0f0f0;
+    background-color: transparent;
     border-radius: 16px;
     font-size: 14px;
+    border: 1px solid black;
     color: #666;
     width: 70px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     margin-top: 8px;
   }
 

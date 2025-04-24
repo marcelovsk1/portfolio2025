@@ -15,7 +15,7 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
           </a>
 
           {/* Links condicionais (Live Demo) */}
-          {title === "Game of Codes" && (
+          {/* {title === "Game of Codes" && (
             <a
               href="https://www.game-of-codes.pro/"
               className="demo-button"
@@ -24,7 +24,7 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
             >
               Live Demo
             </a>
-          )}
+          )} */}
           {title === "Shoes App" && (
             <a
               href="https://www.linkedin.com/feed/update/urn:li:activity:7191889677941948416/"

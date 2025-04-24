@@ -4,6 +4,15 @@ import './ProjectModal.css';
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
+  const shouldShowOnlyLiveDemo = project.title === "My Shopify Theme" || 
+    project.title === "Product Card" || 
+    project.title === "Product Bundle" || 
+    project.title === "eCommerceMenu" ||
+    project.title === "Pace - Running App" || 
+    project.title === "Slider Section Collection" || 
+    project.title === "Discount Bar" || 
+    project.title === "eCommerce Filter Collection";
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -22,10 +31,10 @@ const ProjectModal = ({ project, onClose }) => {
             />
           </div>
 
-        <div class="modal-year">
-          <span className="modal-category">{project.language}</span>
-          <span className="modal-category">{project.year}</span>
-        </div>
+          <div className="modal-year">
+            <span className="modal-category">{project.language}</span>
+            <span className="modal-category">{project.year}</span>
+          </div>
 
           <div className="modal-info">
             <div className="modal-description">
@@ -33,17 +42,7 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
 
             <div className="modal-actions">
-              {project.link && (
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="modal-button github"
-                >
-                  View on GitHub
-                </a>
-              )}
-              {project.liveDemo && (
+              {shouldShowOnlyLiveDemo ? (
                 <a 
                   href={project.liveDemo} 
                   target="_blank" 
@@ -52,6 +51,29 @@ const ProjectModal = ({ project, onClose }) => {
                 >
                   Live Demo
                 </a>
+              ) : (
+                <>
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="modal-button github"
+                    >
+                      View on GitHub
+                    </a>
+                  )}
+                  {project.liveDemo && (
+                    <a 
+                      href={project.liveDemo} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="modal-button demo"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </>
               )}
             </div>
           </div>

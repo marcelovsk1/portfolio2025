@@ -28,6 +28,8 @@ import menu from "../../img/menu.png";
 import bubble from "../../img/bubble.png";
 import pace from "../../img/pace.png";
 import theme from "../../img/theme2.jpg";
+import bundle from "../../img/bundle.jpg";
+import newport from "../../img/NewPort.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
@@ -108,24 +110,6 @@ const Projects = () => {
       year: "2025",
     },
     {
-      title: "eCommerceMenu",
-      description: "A menu for an eCommerce website, built with Liquid and Shopify",
-      imgUrl: menu,
-      link: "https://github.com/KittySou/game-of-codes",
-      liveDemo: "https://evryjewels.ca/",
-      language: "Shopify",
-      year: "2023",
-    },
-    {
-      title: "Product Card",
-      description: "Product card built with Liquid and Shopify",
-      imgUrl: product,
-      link: "https://github.com/KittySou/game-of-codes",
-      liveDemo: "https://evryjewels.ca/",
-      language: "Shopify",
-      year: "2023",
-    },
-    {
       title: "Shoes App",
       description: "3D CGI applied to Swift iOS",
       imgUrl: drakenike,
@@ -151,6 +135,33 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/NewsApp",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
       language: "SwiftUi",
+      year: "2023",
+    },
+    {
+      title: "Product Bundle",
+      description: "A product bundle for an eCommerce website, built with Liquid and Shopify",
+      imgUrl: bundle,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/pages/phone-case-builder",
+      language: "Shopify",
+      year: "2025",
+    },
+    {
+      title: "eCommerceMenu",
+      description: "A menu for an eCommerce website, built with Liquid and Shopify",
+      imgUrl: menu,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2023",
+    },
+    {
+      title: "Product Card",
+      description: "Product card built with Liquid and Shopify",
+      imgUrl: product,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
       year: "2023",
     },
     {
@@ -211,6 +222,51 @@ const Projects = () => {
       year: "2024",
     },
     {
+      title: "This Portfolio",
+      description: "My new portfolio, built with React.js",
+      imgUrl: newport,
+      link: "https://github.com/marcelovsk1/portfolio2025",
+      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_softwaredeveloper-developer-frontenddeveloper-activity-7297659005278035968-MD8r?utm_source=share&utm_medium=member_desktop&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
+      language: "React.Js",
+      year: "2025",
+    },
+    {
+      title: "AI Chatbot",
+      description: "A chatbot that uses AI to answer questions and provide information",
+      imgUrl: artf,
+      link: "https://github.com/marcelovsk1/AI_ImageGenerator",
+      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_swiftui-gptprompt-artificialintelligence-activity-7206720699531423744-9-Ui?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
+      title: "Scraper Bot",
+      description: "Automates web data collection through scraping techniques",
+      imgUrl: scraper,
+      link: "https://github.com/marcelovsk1/scraper-demo",
+      liveDemo: null,
+      language: "Python/BeautifulSoup",
+      year: "2024",
+    },
+    {
+      title: "3D Content in iOS",
+      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
+      imgUrl: interfaceImg,
+      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
+      title: "Guess PvP Game",
+      description: "A multiplayer guessing game (identify doodles)",
+      imgUrl: guessgame,
+      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
+      liveDemo: null,
+      language: "SwiftUi",
+      year: "2023",
+    },
+    {
       title: "eCommerce Filter Collection",
       description: "Filter bubbles for collections, built with Liquid and Shopify",
       imgUrl: bubble,
@@ -238,48 +294,12 @@ const Projects = () => {
       year: "2024",
     },
     {
-      title: "AI Chatbot",
-      description: "A chatbot that uses AI to answer questions and provide information",
-      imgUrl: artf,
-      link: "https://github.com/marcelovsk1/AI_ImageGenerator",
-      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_swiftui-gptprompt-artificialintelligence-activity-7206720699531423744-9-Ui?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
-      language: "SwiftUi",
-      year: "2024",
-    },
-    {
-      title: "Scraper Bot",
-      description: "Automates web data collection through scraping techniques",
-      imgUrl: scraper,
-      link: "https://github.com/marcelovsk1/scraper-demo",
-      liveDemo: null,
-      language: "Python/BeautifulSoup",
-      year: "2024",
-    },
-    {
-      title: "Guess PvP Game",
-      description: "A multiplayer guessing game (identify doodles)",
-      imgUrl: guessgame,
-      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
-      liveDemo: null,
-      language: "SwiftUi",
-      year: "2023",
-    },
-    {
       title: "Landing Page",
       description: "A concept landing page for Adidas Originals",
       imgUrl: adidasoriginals,
       link: "https://github.com/marcelovsk1/rct-4",
       liveDemo: null,
       language: "React.Js",
-      year: "2024",
-    },
-    {
-      title: "3D Content in iOS",
-      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
-      imgUrl: interfaceImg,
-      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
-      language: "SwiftUi",
       year: "2024",
     },
     {
@@ -328,7 +348,7 @@ const Projects = () => {
   };
 
   const handleButtonClick = (e) => {
-    e.stopPropagation(); // Impede que o clique do botão propague para o card
+    e.stopPropagation(); 
   };
 
   const handleCloseModal = () => {
@@ -339,6 +359,7 @@ const Projects = () => {
   const renderButtons = (project) => {
     if (project.title === "My Shopify Theme" || 
         project.title === "Product Card" || 
+        project.title === "Product Bundle" || 
         project.title === "eCommerceMenu" ||
         project.title === "Pace - Running App" || 
         project.title === "Slider Section Collection" || 
@@ -423,7 +444,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Modal - só aparece no mobile */}
+      {/* Mobile Modal */}
       {isMobile && (
         <ProjectModal 
           project={selectedProject} 

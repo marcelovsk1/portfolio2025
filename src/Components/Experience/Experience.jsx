@@ -192,10 +192,11 @@ const Experience = () => {
                             src={canadaFlag} 
                             alt="Canadian Flag" 
                             style={{ 
-                              width: 'auto', 
-                              height: '15px', 
-                              boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-                              marginLeft: '6px',
+                              width: '28px', 
+                              height: '14px', 
+                              // boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+                              marginLeft: '4px',
+                              border: '1px solid darkgreen',
                               verticalAlign: 'middle',
                               display: 'inline-block',
                               borderRadius: '2px'
@@ -207,10 +208,11 @@ const Experience = () => {
                             src={brazilFlag} 
                             alt="Brazilian Flag" 
                             style={{ 
-                              width: 'auto', 
-                              height: '19px', 
-                              boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+                              width: '29px', 
+                              height: '18px', 
+                              // boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
                               marginLeft: '6px',
+                              // border: '1px solid darkgreen',
                               verticalAlign: 'middle',
                               display: 'inline-block',
                               borderRadius: '2px'
