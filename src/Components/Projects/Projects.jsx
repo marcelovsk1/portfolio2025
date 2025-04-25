@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Projects.css';
+import ProjectModal from '../ProjectModal/ProjectModal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
 
 import drakenike from "../../img/shoesapp.png";
 import netflixapp from "../../img/netflixapp.png";
@@ -26,10 +28,14 @@ import menu from "../../img/menu.png";
 import bubble from "../../img/bubble.png";
 import pace from "../../img/pace.png";
 import theme from "../../img/theme2.jpg";
+import bundle from "../../img/bundle.jpg";
+import newport from "../../img/NewPort.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const projectsRef = useRef([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     gsap.fromTo(
@@ -104,24 +110,6 @@ const Projects = () => {
       year: "2025",
     },
     {
-      title: "eCommerceMenu",
-      description: "A menu for an eCommerce website, built with Liquid and Shopify",
-      imgUrl: menu,
-      link: "https://github.com/KittySou/game-of-codes",
-      liveDemo: "https://evryjewels.ca/",
-      language: "Shopify",
-      year: "2023",
-    },
-    {
-      title: "Product Card",
-      description: "Product card built with Liquid and Shopify",
-      imgUrl: product,
-      link: "https://github.com/KittySou/game-of-codes",
-      liveDemo: "https://evryjewels.ca/",
-      language: "Shopify",
-      year: "2023",
-    },
-    {
       title: "Shoes App",
       description: "3D CGI applied to Swift iOS",
       imgUrl: drakenike,
@@ -147,6 +135,33 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/NewsApp",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
       language: "SwiftUi",
+      year: "2023",
+    },
+    {
+      title: "Product Bundle",
+      description: "A product bundle for an eCommerce website, built with Liquid and Shopify",
+      imgUrl: bundle,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/pages/phone-case-builder",
+      language: "Shopify",
+      year: "2025",
+    },
+    {
+      title: "eCommerceMenu",
+      description: "A menu for an eCommerce website, built with Liquid and Shopify",
+      imgUrl: menu,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2023",
+    },
+    {
+      title: "Product Card",
+      description: "Product card built with Liquid and Shopify",
+      imgUrl: product,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
       year: "2023",
     },
     {
@@ -207,6 +222,51 @@ const Projects = () => {
       year: "2024",
     },
     {
+      title: "This Portfolio",
+      description: "My new portfolio, built with React.js",
+      imgUrl: newport,
+      link: "https://github.com/marcelovsk1/portfolio2025",
+      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_softwaredeveloper-developer-frontenddeveloper-activity-7297659005278035968-MD8r?utm_source=share&utm_medium=member_desktop&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
+      language: "React.Js",
+      year: "2025",
+    },
+    {
+      title: "AI Chatbot",
+      description: "A chatbot that uses AI to answer questions and provide information",
+      imgUrl: artf,
+      link: "https://github.com/marcelovsk1/AI_ImageGenerator",
+      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_swiftui-gptprompt-artificialintelligence-activity-7206720699531423744-9-Ui?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
+      title: "Scraper Bot",
+      description: "Automates web data collection through scraping techniques",
+      imgUrl: scraper,
+      link: "https://github.com/marcelovsk1/scraper-demo",
+      liveDemo: null,
+      language: "Python/BeautifulSoup",
+      year: "2024",
+    },
+    {
+      title: "3D Content in iOS",
+      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
+      imgUrl: interfaceImg,
+      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
+      title: "Guess PvP Game",
+      description: "A multiplayer guessing game (identify doodles)",
+      imgUrl: guessgame,
+      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
+      liveDemo: null,
+      language: "SwiftUi",
+      year: "2023",
+    },
+    {
       title: "eCommerce Filter Collection",
       description: "Filter bubbles for collections, built with Liquid and Shopify",
       imgUrl: bubble,
@@ -234,48 +294,12 @@ const Projects = () => {
       year: "2024",
     },
     {
-      title: "AI Chatbot",
-      description: "A chatbot that uses AI to answer questions and provide information",
-      imgUrl: artf,
-      link: "https://github.com/marcelovsk1/AI_ImageGenerator",
-      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_swiftui-gptprompt-artificialintelligence-activity-7206720699531423744-9-Ui?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
-      language: "SwiftUi",
-      year: "2024",
-    },
-    {
-      title: "Scraper Bot",
-      description: "Automates web data collection through scraping techniques",
-      imgUrl: scraper,
-      link: "https://github.com/marcelovsk1/scraper-demo",
-      liveDemo: null,
-      language: "Python/BeautifulSoup",
-      year: "2024",
-    },
-    {
-      title: "Guess PvP Game",
-      description: "A multiplayer guessing game (identify doodles)",
-      imgUrl: guessgame,
-      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
-      liveDemo: null,
-      language: "SwiftUi",
-      year: "2023",
-    },
-    {
       title: "Landing Page",
       description: "A concept landing page for Adidas Originals",
       imgUrl: adidasoriginals,
       link: "https://github.com/marcelovsk1/rct-4",
       liveDemo: null,
       language: "React.Js",
-      year: "2024",
-    },
-    {
-      title: "3D Content in iOS",
-      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
-      imgUrl: interfaceImg,
-      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
-      language: "SwiftUi",
       year: "2024",
     },
     {
@@ -316,6 +340,48 @@ const Projects = () => {
     },
   ];
 
+  const handleProjectClick = (project) => {
+    if (isMobile) {
+      setSelectedProject(project);
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const handleButtonClick = (e) => {
+    e.stopPropagation(); 
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const renderButtons = (project) => {
+    if (project.title === "My Shopify Theme" || 
+        project.title === "Product Card" || 
+        project.title === "Product Bundle" || 
+        project.title === "eCommerceMenu" ||
+        project.title === "Pace - Running App" || 
+        project.title === "Slider Section Collection" || 
+        project.title === "Discount Bar" || 
+        project.title === "eCommerce Filter Collection") {
+      return (
+        <div className="buttons" onClick={handleButtonClick}>
+          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+        </div>
+      );
+    }
+
+    return (
+      <div className="buttons" onClick={handleButtonClick}>
+        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+        {project.liveDemo && (
+          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section className="projects-section" id="playground">
       <h2 className="projects-title">Playground</h2>
@@ -327,7 +393,12 @@ const Projects = () => {
           {/* Primeira linha de projetos */}
           <div className="projects-row">
             {projectsRow1.map((project, index) => (
-              <div key={index} className="project-card" ref={(el) => (projectsRef.current[index] = el)}>
+              <div 
+                key={index} 
+                className="project-card" 
+                ref={(el) => (projectsRef.current[index] = el)}
+                onClick={() => handleProjectClick(project)}
+              >
                 <div className="project-image">
                   <img 
                     src={project.imgUrl} 
@@ -339,20 +410,7 @@ const Projects = () => {
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <div className="buttons">
-                    {project.title === "My Shopify Theme" || project.title === "Product Card" || project.title === "eCommerceMenu" ? (
-                      <>
-                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                      </>
-                    ) : (
-                      <>
-                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                        {project.liveDemo && (
-                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                        )}
-                      </>
-                    )}
-                  </div>
+                  {!isMobile && renderButtons(project)}
                 </div>
               </div>
             ))}
@@ -361,7 +419,12 @@ const Projects = () => {
           {/* Segunda linha de projetos */}
           <div className="projects-row">
             {projectsRow2.map((project, index) => (
-              <div key={index + projectsRow1.length} className="project-card" ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}>
+              <div 
+                key={index + projectsRow1.length} 
+                className="project-card" 
+                ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}
+                onClick={() => handleProjectClick(project)}
+              >
                 <div className="project-image">
                   <img 
                     src={project.imgUrl} 
@@ -373,26 +436,21 @@ const Projects = () => {
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <div className="buttons">
-                    {project.title === "Pace - Running App" || project.title === "Slider Section Collection" || project.title === "Discount Bar" || project.title === "eCommerce Filter Collection" ? (
-                      <>
-                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                      </>
-                    ) : (
-                      <>
-                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                        {project.liveDemo && (
-                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                        )}
-                      </>
-                    )}
-                  </div>
+                  {!isMobile && renderButtons(project)}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Mobile Modal */}
+      {isMobile && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={handleCloseModal}
+        />
+      )}
     </section>
   );
 };
