@@ -15,16 +15,32 @@
   
   .intro-title {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 7vw; /* Ajusta dinamicamente com a tela */
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw; /* Mantém o tamanho maior */
     letter-spacing: -2px;
     font-weight: 900;
     color: rgb(0, 0, 0);
-    margin-bottom: 20px;
-    text-align: left;
+    margin-top: 10vh; /* Reduzido de 20vh para diminuir o espaço */
+    margin-bottom: 5vh; /* Adiciona uma margem inferior */
+    text-align: center; /* Centralizado */
     width: 100%;
-    padding-left: 5vw;
+    padding: 0;
+    /* height: 80vh; foi removido para corrigir o espaçamento */
+  }
+  
+  .intro-title span {
+    white-space: pre-line; /* Preserva quebras de linha no span também */
+  }
+  
+  .cursor {
+    animation: blink 1s infinite;
+  }
+  
+  /* Animação piscante do cursor */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
   
   .intro-image-container {
@@ -35,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-bottom: 15vh; Foi removido para tirar o espaço */
   }
   
   .intro-image {
@@ -44,6 +61,8 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   }
   
   .image-caption {
@@ -65,19 +84,26 @@
     }
   
     .intro-title {
-      font-size: 2rem; 
+      font-size: 8vw; /* Aumentado de 2rem para 8vw para manter responsivo */
       text-align: center;
       justify-content: center;
+      align-items: center;
       padding: 0;
+      margin-top: 5vh; /* Reduzido de 15vh */
+      margin-bottom: 5vh;
+      /* height: 60vh; foi removido para corrigir o espaçamento */
     }
   
     .intro-image-container {
       width: 100%;
+      /* margin-bottom: 10vh; Foi removido para tirar o espaço */
     }
   
     .intro-image {
       height: auto;
       max-height: 400px; 
+      border-radius: 5px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);  
     }
   
     .image-caption {

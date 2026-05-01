@@ -23,7 +23,11 @@ import pucrs from "../../Assets/Skills/pucrs.png";
 import lewagon from "../../Assets/Skills/le_wagon.png";
 import canadaFlag from "../../Assets/Skills/canada-flag.png";
 import brazilFlag from "../../Assets/Skills/brazil-flag.png";
-
+import revelo from "../../Assets/Skills/revelo1.jpg";
+import revelo2 from "../../Assets/Skills/revelo.png";
+import abra from "../../Assets/Skills/abra.png";
+import usp from "../../Assets/Skills/usp-logo-png.png";
+import usp2 from "../../Assets/Skills/usp-logo-0.png";
 
 const getImage = (imageSrc) => {
   switch (imageSrc) {
@@ -61,6 +65,16 @@ const getImage = (imageSrc) => {
      return pucrs;
      case "Skills/le_wagon.png":
         return lewagon;      
+    case "Skills/revelo1.jpg":
+      return revelo;
+    case "Skills/revelo.png":
+      return revelo2;
+    case "Skills/abra.png":
+      return abra;
+    case "Skills/usp-logo-png.png":
+      return usp;
+      case "Skills/usp-logo-0.png":
+        return usp2;
     default:
       return null;
   }
@@ -68,6 +82,7 @@ const getImage = (imageSrc) => {
 
 const Experience = () => {
   const [isWorkExperience, setIsWorkExperience] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [animating, setAnimating] = useState(false);
   const contentRef = useRef(null);
   
@@ -117,10 +132,17 @@ const Experience = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleWorkExperienceClick = () => handleSectionChange(true);
-  const handleEducationClick = () => handleSectionChange(false);
+  const handleWorkExperienceClick = () => {
+    handleSectionChange(true);
+    setIsExpanded(false);
+  };
+  const handleEducationClick = () => {
+    handleSectionChange(false);
+    setIsExpanded(false);
+  };
 
   const dataToDisplay = isWorkExperience ? historyData : educationData;
+  const showSeeMoreButton = dataToDisplay.length > 2;
 
   return (
     <section className={styles.container} id="experience">
@@ -170,7 +192,9 @@ const Experience = () => {
             </button>
           </div>
 
-          <div className={styles.contentWrapper}>
+          <div 
+            className={`${styles.contentWrapper} ${!isExpanded && showSeeMoreButton ? styles.collapsed : ""}`}
+          >
             {dataToDisplay.map((item, id) => (
               <div
                 key={id}
@@ -187,7 +211,7 @@ const Experience = () => {
                       {item.startDate} - {item.endDate}
                       <p className={styles.locationContainer}>
                         {item.location}
-                        {item.location.toLowerCase().includes('canada') && (
+                        {/* {item.location.toLowerCase().includes('canada') && (
                           <img 
                             src={canadaFlag} 
                             alt="Canadian Flag" 
@@ -202,8 +226,8 @@ const Experience = () => {
                               borderRadius: '2px'
                             }} 
                           />
-                        )}
-                        {(item.location.toLowerCase().includes('brazil') || item.location.toLowerCase().includes('brasil')) && (
+                        )} */}
+                        {/* {(item.location.toLowerCase().includes('brazil') || item.location.toLowerCase().includes('brasil')) && (
                           <img 
                             src={brazilFlag} 
                             alt="Brazilian Flag" 
@@ -218,7 +242,7 @@ const Experience = () => {
                               borderRadius: '2px'
                             }} 
                           />
-                        )}
+                        )} */}
                       </p>
                     </span>
                   </div>
@@ -231,6 +255,15 @@ const Experience = () => {
               </div>
             ))}
           </div>
+
+          {showSeeMoreButton && (
+            <button 
+              className={styles.seeMoreButton}
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? "See less" : "See more"}
+            </button>
+          )}
         </div>
       </div>
     </section>
