@@ -21,8 +21,6 @@ import liquid from "../../Assets/Skills/liquid.png";
 import pucpr from "../../Assets/Skills/Brasão_PUCPR.png";
 import pucrs from "../../Assets/Skills/pucrs.png";
 import lewagon from "../../Assets/Skills/le_wagon.png";
-import canadaFlag from "../../Assets/Skills/canada-flag.png";
-import brazilFlag from "../../Assets/Skills/brazil-flag.png";
 import revelo from "../../Assets/Skills/revelo1.jpg";
 import revelo2 from "../../Assets/Skills/revelo.png";
 import abra from "../../Assets/Skills/abra.png";

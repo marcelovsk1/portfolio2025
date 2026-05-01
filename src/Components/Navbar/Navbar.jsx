@@ -5,7 +5,6 @@ import "./Navbar.css";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -28,14 +27,14 @@ const Navbar = () => {
       }
     };
 
-    if (isMenuOpen || isSidebarOpen) {
+    if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMenuOpen, isSidebarOpen]);
+  }, [isMenuOpen]);
 
   return (
     <>
