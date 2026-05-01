@@ -30,6 +30,7 @@ import pace from "../../img/pace.png";
 import theme from "../../img/theme2.jpg";
 import bundle from "../../img/bundle.jpg";
 import newport from "../../img/NewPort.png";
+import wordpress from "../../img/wordpress.png"
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
@@ -108,6 +109,16 @@ const Projects = () => {
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7316179512864481280/",
       language: "Shopify",
       year: "2025",
+    },
+    {
+      title: "WordPress Website",
+      description: "An Agency Website built in HTML/CSS and JS",
+      imgUrl: wordpress,
+      link: "https://github.com/marcelovsk1/Shoes-App",
+      liveDemo:
+        "https://gameofcodes.fun/#",
+      language: "WordPress",
+      year: "2024",
     },
     {
       title: "Shoes App",
@@ -206,7 +217,7 @@ const Projects = () => {
       imgUrl: poc,
       link: "https://github.com/marcelovsk1/poc",
       liveDemo: null,
-      language: "Python/Flask",
+      language: "Python",
       year: "2025",
     },
   ];
@@ -245,7 +256,7 @@ const Projects = () => {
       imgUrl: scraper,
       link: "https://github.com/marcelovsk1/scraper-demo",
       liveDemo: null,
-      language: "Python/BeautifulSoup",
+      language: "Python",
       year: "2024",
     },
     {
@@ -359,6 +370,7 @@ const Projects = () => {
   const renderButtons = (project) => {
     if (project.title === "My Shopify Theme" || 
         project.title === "Product Card" || 
+        project.title === "WordPress Website" ||
         project.title === "Product Bundle" || 
         project.title === "eCommerceMenu" ||
         project.title === "Pace - Running App" || 

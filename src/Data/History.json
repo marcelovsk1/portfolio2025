@@ -1,10 +1,32 @@
 [
+  {
+    "role": "Shopify Developer",
+    "organisation": "Abra",
+    "location": "Toronto, ON, Canada - Remote",
+    "startDate": "Jun, 2025",
+    "endDate": "Present",
+    "experiences": [
+      "Responsible for implementing technical solutions on the Shopify platform, with a focus on automation and theme customization. Tasks include building dynamic pricing schemas, handling technical support inquiries via chat and email, and developing onboarding tools to streamline store setup and reduce manual processes."
+    ],
+    "imageSrc": "Skills/abra.png"
+  },
+  {
+    "role": "LLM Trainer",
+    "organisation": "Revelo",
+    "location": "Miami, FL, USA - Remote",
+    "startDate": "May, 2025",
+    "endDate": "Present",
+    "experiences": [
+      "Working on Large Multimodal Model (LMM) training projects, supporting the post-training phase of AI models through data curation, response evaluation, and quality review. Involved in tasks related to Supervised Fine-Tuning (SFT), Reinforcement Learning from Human Feedback (RLHF), and Direct Preference Optimization (DPO)."
+    ],
+    "imageSrc": "Skills/revelo.png"
+  },
     {
       "role": "Software Developer",
       "organisation": "Evry Jewels",
-      "location": "Montréal, QC, Canada",
+      "location": "Montréal, QC, Canada - On-site",
       "startDate": "Jul, 2024",
-      "endDate": "Present",
+      "endDate": "May, 2025",
       "experiences": [
         "Developing internal solutions using Shopify and Shopify Polaris, focusing on building customized and optimized apps tailored to the company’s needs. I also use Next.js and JavaScript to create internal software that enhances operational efficiency and improves user experience. Always committed to best development practices and technological innovation."
       ],
@@ -13,7 +35,7 @@
     {
       "role": "Software Developer Intern",
       "organisation": "Trendit - Top Events Live Ranking",
-      "location": "Montréal, QC, Canada",
+      "location": "Montréal, QC, Canada - Hybrid",
       "startDate": "Dec, 2023",
       "endDate": "Jul, 2024",
       "experiences": [

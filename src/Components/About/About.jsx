@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css';
 import About_Pic from '../../../src/img/newAbout.jpg';
+import eu from '../../../src/img/EUU.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,13 +49,13 @@ const About = () => {
         <div className="about-left" ref={textRef}>
           <h2 className="about-title">Who's This?</h2>
           <p className="about-text">
-            As a <span>Software Developer</span> graduated from <span>Le Wagon Montreal,</span> I bring a strong foundation in frontend technologies combined with diverse academic qualifications. <br /><br />
-            My academic journey includes a Bachelor's degree in <span>Business Administration</span> from <span>PUCPR</span> and a Master's in <span>Growth and Digital Strategy</span> from <span>PUCRS.</span> <br /><br />
-            <span id='span-mobile'>This unique blend of technical expertise and strategic thinking empowers me to create innovative designs that balance creativity with efficiency and precision.</span> 
+            As a <span>Software Developer</span> graduated from <span>Le Wagon Montreal,</span> I bring a strong foundation in full-stack development with expertise in modern web technologies. <br /><br />
+            Currently, I am pursuing an <span>MBA in Software Engineering</span> at <span>USP,</span> continuously expanding my technical knowledge and engineering skills to build robust and scalable applications. <br /><br />
+            <span id='span-mobile'>My passion for coding and problem-solving drives me to create innovative solutions that balance clean code, efficiency, and user experience.</span> 
           </p>
         </div>
         <div className="about-right">
-          <img src={About_Pic} alt="About Me" className="about-photo" ref={imageRef} />
+          <img src={eu} alt="About Me" className="about-photo" ref={imageRef} />
         </div>
       </div>
     </section>

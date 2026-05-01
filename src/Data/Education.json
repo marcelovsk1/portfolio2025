@@ -1,5 +1,15 @@
 [
-
+    {
+        "role": "Masters in Software Engineering",
+        "organisation": "USP - ESALQ - University of São Paulo",
+        "startDate": "2025",
+        "endDate": "2027",
+        "location": "São Paulo, SP, Brazil",
+        "experiences": [
+          "Postgraduate program focused on advanced topics such as software architecture, requirements engineering, agile methodologies, quality assurance, security, and IT governance."
+        ],
+        "imageSrc": "Skills/usp-logo-0.png"
+    },
     {
         "role": "Software Development Bootcamp",
         "organisation": "Le Wagon Montreal",
