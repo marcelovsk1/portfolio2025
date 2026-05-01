@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <h2>Gerando favicons...</h2>
+    <canvas id="canvas192" width="192" height="192" style="display:none"></canvas>
+    <canvas id="canvas512" width="512" height="512" style="display:none"></canvas>
+    <canvas id="canvas32" width="32" height="32" style="display:none"></canvas>
+    
+    <div id="downloads"></div>
+
+    <script>
+        function generateFavicon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background roxo
+            ctx.fillStyle = '#5500ff';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Texto branco "</>  "
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.45}px "Courier New", monospace`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('</>', size / 2, size / 2);
+            
+            return canvas;
+        }
+
+        // Gerar todas as versões
+        const canvas192 = generateFavicon('canvas192', 192);
+        const canvas512 = generateFavicon('canvas512', 512);
+        const canvas32 = generateFavicon('canvas32', 32);
+
+        // Criar links de download
+        const downloads = document.getElementById('downloads');
+        
+        canvas192.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            downloads.innerHTML += `<a href="${url}" download="logo192.png">Download logo192.png</a><br>`;
+        });
+
+        canvas512.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            downloads.innerHTML += `<a href="${url}" download="logo512.png">Download logo512.png</a><br>`;
+        });
+
+        canvas32.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            downloads.innerHTML += `<a href="${url}" download="favicon-32x32.png">Download favicon-32x32.png (renomeie para favicon.ico)</a><br>`;
+        });
+
+        downloads.innerHTML += '<br><p>Clique nos links acima para baixar os arquivos e substitua os arquivos na pasta public/</p>';
+    </script>
+</body>
+</html>
